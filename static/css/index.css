@@ -2,35 +2,35 @@
     font-family: ProximaNova;
     font-weight: 800;
     font-style: normal;
-    src: url(/static/fonts/Extrabold.woff2) format("woff2")
+    src: url(https://cdn.jsdelivr.net/gh/cnmseo/v1@main/static/fonts/Extrabold.woff2) format("woff2")
 }
 
 @font-face {
     font-family: ProximaNova;
     font-weight: 700;
     font-style: normal;
-    src: url(/static/fonts/Bold.woff2) format("woff2")
+    src: url(https://cdn.jsdelivr.net/gh/cnmseo/v1@main/static/fonts/Bold.woff2) format("woff2")
 }
 
 @font-face {
     font-family: ProximaNova;
     font-weight: 400;
     font-style: normal;
-    src: url(/static/fonts/Regular.woff2) format("woff2")
+    src: url(https://cdn.jsdelivr.net/gh/cnmseo/v1@main/static/fonts/Regular.woff2) format("woff2")
 }
 
 @font-face {
     font-family: ProximaNova;
     font-weight: 300;
     font-style: normal;
-    src: url(/static/fonts/Light.woff2) format("woff2")
+    src: url(https://cdn.jsdelivr.net/gh/cnmseo/v1@main/static/fonts/Light.woff2) format("woff2")
 }
 
 @font-face {
     font-family: ProximaNova;
     font-weight: 200;
     font-style: normal;
-    src: url(/static/fonts/Thin.woff2) format("woff2")
+    src: url(https://cdn.jsdelivr.net/gh/cnmseo/v1@main/static/fonts/Thin.woff2) format("woff2")
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {
