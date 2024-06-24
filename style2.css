@@ -1,0 +1,4890 @@
+@import 'https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,500,500i,600,600i,700,700i&display=swap';
+
+html {
+  position: relative;
+}
+
+body {
+  margin: 0;
+  font-family: roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #444;
+  background: #fff;
+  counter-reset: x;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 0 10px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: heebo;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2.6em;
+}
+
+h2 {
+  font-size: 2.1em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: .3s ease;
+  font-family: oswald, sans-serif;
+}
+
+p a,
+.content-block li a {
+  font-weight: 600;
+}
+
+p a:hover,
+.content-block li a:hover {
+  text-decoration: underline;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+}
+
+ul,
+ol {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: inherit;
+  font-size: 1em;
+  transition: .3s;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+figure {
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+*::placeholder {
+  color: inherit;
+  opacity: .5;
+}
+
+.button {
+  transition: .3s;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1340px
+  };
+}
+
+@media screen and (max-width: 1199px) {
+  body.responsiveness-menu-open {
+    overflow: hidden
+  }
+
+  body.responsiveness-menu-open main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0/60%);
+    z-index: 2
+  };
+}
+
+@media (max-width: 600px) {
+  #wpadminbar {
+    position: fixed
+  };
+}
+
+body .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*  */
+
+.copy {
+  position: relative;
+  z-index: 2;
+}
+
+.copy :is(.title, .success) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  transition: .3s;
+  background: #FFF;
+
+  height: 40px;
+  border-radius: 2px;
+  border: 1px dashed #2ACE4D;
+  color: #2ACE4D;
+  font-family: heebo !important;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.copy :is(.title, .success):not(.active) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.copy .title {
+  cursor: pointer;
+}
+
+.copy .title:hover {
+  background: #2ACE4D29;
+}
+
+.copy .success {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*  */
+
+header {
+  background: #fff;
+  padding: 25px 0 15px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+header .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 35px;
+}
+
+header .brand>.logo img {
+  width: 170px;
+}
+
+header .sponsor {
+  display: flex;
+  align-items: center;
+}
+
+header .sponsor .prefix {
+  margin-right: 6px;
+}
+
+header .sponsor .prefix span {
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 118%;
+  color: #080808;
+  position: relative;
+  top: 2px;
+}
+
+header .sponsor .logo img {
+  display: block;
+  height: 18px;
+  cursor: pointer;
+}
+
+.menu-navigation {
+  width: 24px;
+}
+
+.menu-navigation.responsiveness img {
+  cursor: pointer;
+}
+
+.menu-navigation.responsiveness img.hide {
+  display: none;
+}
+
+.primary-menu {
+  font-weight: 700;
+}
+
+.primary-menu .menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.primary-menu img {
+  width: 16px;
+  height: auto;
+  margin-left: 10px;
+  transition: .3s;
+}
+
+.primary-menu ul li {
+  position: relative;
+  color: #000;
+}
+
+.primary-menu ul ul li {
+  color: #7b7b7b;
+}
+
+.primary-menu a {
+  font-weight: 400;
+  flex: 1;
+}
+
+.primary-menu a:hover+div img {
+  transform: rotate(180deg);
+}
+
+.primary-menu>ul>li>.menu-item a {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+@media screen and (min-width:1200px) {
+  header .sponsor .logo .logo-background {
+    display: none
+  }
+
+  header .container>.primary-menu {
+    display: flex;
+    justify-content: center
+  }
+
+  .primary-menu>ul {
+    display: flex
+  }
+
+  .primary-menu>ul>li:not(:last-child) {
+    margin-right: 20px
+  }
+
+  .primary-menu>ul>li>.menu-item a {
+    padding-bottom: 12px;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -16px
+  }
+
+  .primary-menu>ul>li>.menu-item a:hover {
+    border-color: #ea7a02
+  }
+
+  .primary-menu li:not(:hover) ul {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden
+  }
+
+  .primary-menu ul ul {
+    max-height: 500px;
+    transition: .3s;
+    z-index: 1;
+    position: absolute;
+    top: 40px;
+    width: 200px;
+    background: #fff;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.1))
+  }
+
+  .primary-menu ul ul li:hover {
+    background: #f5f5f5;
+    color: #212121
+  }
+
+  .primary-menu ul ul li:not(:last-child) {
+    border-bottom: 1px solid #eee
+  }
+
+  .primary-menu ul ul a {
+    font-size: 14px;
+    text-transform: capitalize;
+    padding: 6px 16px
+  };
+}
+
+@media screen and (max-width: 1199px) {
+  body.responsiveness {
+    overflow-y: hidden;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(67, 67, 67, 0) 131.12%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh
+  }
+
+  header {
+    padding: 15px 0;
+    background: #000;
+    border-bottom: 0
+  }
+
+  header .top {
+    padding-bottom: 0;
+    justify-content: space-between
+  }
+
+  header .brand>.logo {
+    margin-bottom: 8px
+  }
+
+  header .brand>.logo img {
+    width: 140px;
+    filter: invert(1)
+  }
+
+  header .sponsor .prefix span {
+    color: #f5f5f5;
+    font-size: 13px
+  }
+
+  header .sponsor .sponsor-logo img {
+    height: 16px
+  }
+
+  header .sponsor .logo .logo-colored {
+    display: none
+  }
+
+  .primary-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: calc(100% - 40vw);
+    height: 100vh;
+    background: #fff;
+    padding: 20px 15px;
+    transition: .3s
+  }
+
+  .primary-menu.responsiveness.closed {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    opacity: 0
+  }
+
+  .primary-menu.responsiveness>div:nth-child(n+2) {
+    padding-top: 20px
+  }
+
+  .primary-menu>ul {
+    margin: auto
+  }
+
+  .primary-menu>ul>li {
+    padding: 16px 0
+  }
+
+  .primary-menu ul ul li {
+    padding: 20px 10px
+  }
+
+  .primary-menu ul ul li {
+    border-bottom: 1px solid #eee
+  }
+
+  .primary-menu>ul>li>.menu-item a {
+    font-size: 18px;
+    line-height: 27px
+  }
+
+  .primary-menu>ul>li>.menu-item>a:hover {
+    color: #ea7a02
+  }
+
+  .primary-menu ul ul a {
+    padding-left: 10px;
+    font-size: 15px
+  }
+
+  .primary-menu ul ul a:hover {
+    color: #ea7a02
+  }
+
+  .primary-menu img {
+    width: 16px
+  }
+
+  .primary-menu li.opened a+div img {
+    transform: rotate(180deg)
+  }
+
+  .primary-menu li:not(.opened) ul {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden
+  };
+}
+
+@media screen and (max-width: 768px) {
+  .primary-menu {
+    width: calc(100% - 20vw)
+  };
+}
+
+@media screen and (min-width:1200px) {
+  .menu-navigation.responsiveness {
+    display: none
+  };
+}
+
+@media screen and (min-width:576px) and (max-width: 1199px) {
+  .primary-menu>ul {
+    max-width: calc(540px - 20vw - 30px)
+  };
+}
+
+@media screen and (min-width:768px) and (max-width: 1199px) {
+  .primary-menu>ul {
+    max-width: calc(720px - 40vw - 30px)
+  };
+}
+
+@media screen and (min-width:992px) and (max-width: 1199px) {
+  .primary-menu>ul {
+    max-width: calc(960px - 40vw - 30px)
+  };
+}
+
+footer {
+  font-family: heebo, sans-serif;
+  background: #000;
+  color: #ababab;
+}
+
+footer .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer p {
+  font-size: 13px;
+}
+
+footer .footer-top .wrapper {
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(168, 168, 170, .35);
+}
+
+footer .sponsor {
+  display: flex;
+  align-items: baseline;
+}
+
+footer .sponsor .icon {
+  position: relative;
+  top: 2px;
+  margin-left: 6px;
+}
+
+footer .sponsor .icon img {
+  display: block;
+  height: 18px;
+  filter: grayscale(1);
+  transition: .3s ease;
+}
+
+footer .sponsor .icon img:hover {
+  filter: grayscale(0);
+}
+
+footer .menu ul {
+  display: flex;
+}
+
+footer .menu ul li~li {
+  margin-left: 28px;
+}
+
+footer .menu ul li a {
+  font-size: 15px;
+  line-height: 22px;
+  transition: .3s ease;
+}
+
+footer .menu ul li a:hover {
+  color: #ea7a02;
+}
+
+footer .footer-middle {
+  padding: 40px 0 48px;
+}
+
+footer .disclaimer p strong {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  display: block;
+}
+
+footer .footer-bottom {
+  background: #141414;
+}
+
+footer .footer-bottom .wrapper {
+  padding: 20px 0;
+  justify-content: flex-start;
+}
+
+footer .info {
+  display: flex;
+  align-items: center;
+}
+
+footer .info .icons {
+  margin-left: 24px;
+}
+
+footer .info .icons .icon {
+  height: 22px;
+  width: 22px;
+}
+
+footer .info .icons .icon~.icon {
+  margin-left: 12px;
+}
+
+footer .info .icons .icon img {
+  display: block;
+  width: 100%;
+}
+
+footer .social {
+  margin-left: auto;
+}
+
+footer .social .social-medias {
+  display: flex;
+}
+
+footer .social .social-medias .social-media~.social-media {
+  margin-left: 14px;
+}
+
+footer .social .social-medias .social-media img {
+  display: block;
+  width: 20px;
+  aspect-ratio: 1;
+  object-fit: contain;
+  transition: .3s ease;
+}
+
+footer .social .social-medias .social-media img:hover {
+  filter: invert(50%) sepia(43%) saturate(4076%) hue-rotate(9deg) brightness(102%) contrast(98%);
+}
+
+.compliance {
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+  margin-left: 24px;
+}
+
+@media (max-width: 767px) {
+  footer .logo img {
+    width: 80px;
+  }
+
+  footer .footer-middle {
+    padding: 24px 0;
+  }
+
+  footer .footer-bottom {
+    background: none;
+  }
+
+  footer .footer-bottom .wrapper {
+    flex-direction: column;
+    padding-top: 0;
+    align-items: stretch;
+  }
+
+  footer .social {
+    margin-bottom: 12px;
+    margin-left: 0;
+  }
+
+  footer .social .social-medias {
+    justify-content: center;
+  }
+
+  footer .social .social-medias .social-media ~ .social-media {
+    margin-left: 16px;
+  }
+
+  .compliance {
+    margin: 8px 0 24px;
+  }
+}
+
+@media (max-width: 575px) {
+  footer .sponsor .icon img {
+    filter: grayscale(0);
+  }
+
+  footer .menu ul li~li {
+    margin-left: 16px;
+  }
+}
+
+section.main {
+  padding: 40px 0;
+}
+
+.hero {
+  color: #555;
+}
+
+.hero a {
+  font-family: heebo, sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  color: #555;
+}
+
+.hero a:hover {
+  color: #ea7a02;
+}
+
+.hero .container>div {
+  padding: 0 15px;
+}
+
+.hero .breadcrumb {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.hero .breadcrumb>span {
+  display: block;
+  margin: 0 4px;
+}
+
+.hero .introduction .title {
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .hero .breadcrumb {
+    margin-bottom: 10px
+  };
+}
+
+.col-xl-8>div:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.col-xl-8>div>div:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.free-games-archive-template .col-xl-8>div>div>div:not(:last-child),
+.category-template .col-xl-8>div>div>div:not(:last-child),
+.betting-tips-archive-template .col-xl-8>div>div>div:not(:last-child),
+.betting-tips-sport-archive-template .col-xl-8>div>div>div:not(:last-child),
+.template-404 .col-xl-8>div>div>div:not(:last-child),
+.index-template .col-xl-8>div>div>div:not(:last-child),
+.homepage-template .col-xl-8>div>div>div:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .free-games-archive-template .col-xl-4,
+  .category-template .col-xl-4,
+  .betting-tips-archive-template .col-xl-4,
+  .betting-tips-sport-archive-template4 .col-xl-4,
+  .template-404 .col-xl-4,
+  .index-template .col-xl-4,
+  .homepage-template .col-xl-4 {
+    padding-left: 0
+  }
+
+  .free-games-archive-template .col-xl-8,
+  .category-template .col-xl-8,
+  .betting-tips-archive-template .col-xl-8,
+  .betting-tips-sport-archive-template4 .col-xl-8,
+  .template-404 .col-xl-8,
+  .index-template .col-xl-8,
+  .homepage-template .col-xl-8 {
+    padding-right: 0
+  };
+}
+
+@media screen and (max-width: 576px) {
+
+  .free-games-archive-template .col-xl-4,
+  .category-template .col-xl-4,
+  .betting-tips-archive-template .col-xl-4,
+  .betting-tips-sport-archive-template .col-xl-4,
+  .template-404 .col-xl-4,
+  .index-template .col-xl-4,
+  .homepage-template .col-xl-4 {
+    padding: 0 15px
+  }
+
+  .free-games-archive-template .col-xl-8,
+  .category-template .col-xl-8,
+  .betting-tips-archive-template .col-xl-8,
+  .betting-tips-sport-archive-template .col-xl-8,
+  .template-404 .col-xl-8,
+  .index-template .col-xl-8,
+  .homepage-template .col-xl-8 {
+    padding: 0 15px
+  };
+}
+
+.free-games-archive-template .hero,
+.category-template .hero,
+.betting-tips-archive-template .hero,
+.betting-tips-sport-archive-template .hero,
+.template-404 .hero,
+.free-game-review-template .hero,
+.index-template .hero,
+.homepage-template .hero {
+  font-family: heebo, sans-serif;
+  padding: 35px 0;
+  background: #f5f5f5;
+  border-bottom: 1px solid #eee;
+}
+
+.free-games-archive-template .hero .title h1,
+.category-template .hero .title h1,
+.betting-tips-archive-template .hero .title h1,
+.betting-tips-sport-archive-template .hero .title h1,
+.template-404 .hero .title h1,
+.free-game-review-template .hero .title h1,
+.index-template .hero .title h1,
+.homepage-template .hero .title h1 {
+  font-weight: 700;
+  font-size: 32px;
+  color: #000;
+}
+
+.free-games-archive-template .hero .content,
+.category-template .hero .content,
+.betting-tips-archive-template .hero .content,
+.betting-tips-sport-archive-template .hero .content,
+.template-404 .hero .content,
+.free-game-review-template .hero .content,
+.index-template .hero .content,
+.homepage-template .hero .content {
+  font-size: 15px;
+  color: #555;
+}
+
+@media (max-width: 1199px) {
+
+  .free-games-archive-template .hero,
+  .category-template .hero,
+  .betting-tips-archive-template .hero,
+  .betting-tips-sport-archive-template .hero,
+  .template-404 .hero,
+  .free-game-review-template .hero,
+  .index-template .hero,
+  .homepage-template .hero {
+    display: block
+  }
+
+  .free-games-archive-template .hero>.right,
+  .category-template .hero>.right,
+  .betting-tips-archive-template .hero>.right,
+  .betting-tips-sport-archive-template .hero>.right,
+  .template-404 .hero>.right,
+  .free-game-review-template .hero>.right,
+  .index-template .hero>.right,
+  .homepage-template .hero>.right,
+  .right-sidebar {
+    padding-top: 20px
+  };
+}
+
+@media screen and (max-width: 767px) {
+
+  .free-games-archive-template .hero,
+  .category-template .hero,
+  .betting-tips-archive-template .hero,
+  .betting-tips-sport-archive-template .hero,
+  .template-404 .hero,
+  .free-game-review-template .hero,
+  .index-template .hero,
+  .homepage-template .hero {
+    padding: 20px 0
+  }
+
+  .free-games-archive-template .hero .title,
+  .category-template .hero .title,
+  .betting-tips-archive-template .hero .title,
+  .betting-tips-sport-archive-template .hero .title,
+  .template-404 .hero .title,
+  .free-game-review-template .hero .title,
+  .index-template .hero .title,
+  .homepage-template .hero .title {
+    margin-bottom: 10px
+  }
+
+  .free-games-archive-template .hero .title h1,
+  .category-template .hero .title h1,
+  .betting-tips-archive-template .hero .title h1,
+  .betting-tips-sport-archive-template .hero .title h1,
+  .template-404 .hero .title h1,
+  .free-game-review-template .hero .title h1,
+  .index-template .hero .title h1,
+  .homepage-template .hero .title h1 {
+    font-size: 30px
+  }
+
+  .free-games-archive-template .hero .content,
+  .category-template .hero .content,
+  .betting-tips-archive-template .hero .content,
+  .betting-tips-sport-archive-template .hero .content,
+  .template-404 .hero .content,
+  .free-game-review-template .hero .content,
+  .index-template .hero .content,
+  .homepage-template .hero .content {
+    font-size: 15px
+  };
+}
+
+@media screen and (max-width: 480px) {
+
+  .free-games-archive-template .hero .title h1,
+  .category-template .hero .title h1,
+  .betting-tips-archive-template .hero .title h1,
+  .betting-tips-sport-archive-template .hero .title h1,
+  .template-404 .hero .title h1,
+  .free-game-review-template .hero .title h1,
+  .index-template .hero .title h1,
+  .homepage-template .hero .title h1 {
+    font-size: 27px
+  }
+
+  .free-games-archive-template .hero .content,
+  .category-template .hero .content,
+  .betting-tips-archive-template .hero .content,
+  .betting-tips-sport-archive-template .hero .content,
+  .template-404 .hero .content,
+  .free-game-review-template .hero .content,
+  .index-template .hero .content,
+  .homepage-template .hero .content {
+    font-size: 14px
+  };
+}
+
+.casinos-free-bets-template section.main,
+.casinos-template section.main,
+.app-review-template section.main,
+.bonus-review-template section.main,
+.payment-method-review-template section.main,
+.no-deposit-bonuses-template section.main,
+.free-bet-bonuses-template section.main,
+.child-sportsbook-review-template section.main,
+.sportsbook-review-template section.main,
+.betting-comparison-template section.main {
+  padding: 0 0 40px;
+}
+
+.no-deposit-bonuses-template .col-xl-8>.bonuses,
+.free-bet-bonuses-template .col-xl-8>.bonuses,
+.payment-method-review-template .sportsbooks,
+.payment-method-review-template .sportsbooks>.content,
+.payment-method-review-template .sportsbooks>.advertisers-geographical-areas,
+.betting-comparison-template .sportsbooks,
+.betting-comparison-template .sportsbooks>.content,
+.betting-comparison-template .sportsbooks>.advertisers-geographical-areas {
+  margin-bottom: 40px !important;
+}
+
+.sportsbook .advertiser-geographical-area.long-card .rating {
+  display: flex;
+  align-items: center;
+  font-size: 1.4em;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.sportsbook .advertiser-geographical-area.long-card .rating img {
+  display: block;
+  width: 18px;
+  margin-right: 5px;
+}
+
+.information-table tbody {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.information-table tr {
+  flex: 0 0 50%;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.information-table td:first-child {
+  flex: 0 0 40px;
+  height: 40px;
+  background: #ea7a02;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.information-table td:last-child {
+  padding-left: 15px;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+
+.information-table td:last-child>div {
+  display: flex;
+  align-items: center;
+}
+
+.information-table td:last-child>div>a img,
+.information-table td:last-child>div>img {
+  text-indent: -9999px;
+  flex: 0 0 20%;
+  display: block;
+  height: 24px;
+  width: auto;
+}
+
+.information-table td:last-child>.payment-methods>a img,
+.information-table td:last-child>.payment-methods>img {
+  height: 12px !important;
+  filter: grayscale(1);
+  flex: unset;
+}
+
+.information-table td:last-child>.payment-methods>a img:hover,
+.information-table td:last-child>.payment-methods>img:hover {
+  filter: grayscale(0);
+}
+
+.information-table td:last-child>div>img~a,
+.information-table td:last-child>div>img:nth-child(n+2) {
+  margin-left: 10px;
+}
+
+.information-table td>span,
+.information-table td>a {
+  display: block;
+  width: fit-content;
+  font-family: heebo;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  color: #212121;
+}
+
+.information-table td>a:hover {
+  color: #ea7a02;
+}
+
+.information-table td:last-child>span:first-child {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+  color: #555;
+}
+
+.pros-cons>div:nth-child(n+2) {
+  padding-top: 20px;
+}
+
+.pros-cons .title {
+  font-family: roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.pros-cons .cons-item,
+.pros-cons .pros-item {
+  font-family: roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  position: relative;
+  padding-left: 20px;
+}
+
+.pros-cons .cons-item::before,
+.pros-cons .pros-item::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: calc((100% - 4px)/2);
+  height: 4px;
+  width: 4px;
+  border-radius: 4px;
+  background: #444;
+}
+
+.pros-cons .cons-item:nth-child(n+3),
+.pros-cons .pros-item:nth-child(n+3) {
+  margin-top: 3px;
+}
+
+.pros-cons .pros-item {
+  color: #000;
+}
+
+@media (max-width: 767px) {
+  .information-table td:last-child>.payment-methods {
+    flex-wrap: wrap;
+  }
+
+  .information-table td:last-child>.payment-methods img {
+    margin: 5px !important;
+  };
+}
+
+@media (max-width: 575px) {
+  .information-table tbody {
+    display: block
+  };
+}
+
+section.hero {
+  padding: 25px 0;
+}
+
+section.hero .title {
+  margin-bottom: 12px;
+}
+
+section.hero .title h1 {
+  font-family: oswald;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+}
+
+section.hero .subtitle {
+  margin-bottom: 15px;
+}
+
+section.hero .subtitle h2,
+section.hero .subtitle p {
+  font-family: heebo;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #a0a0a0;
+}
+
+section.hero .meta,
+section.hero .meta a {
+  font-family: heebo, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 16px;
+  color: #a0a0a0;
+  display: flex;
+  align-items: center;
+}
+
+section.hero .meta .author {
+  margin-right: 12px;
+}
+
+section.hero .meta .author .name a,
+section.hero .meta .author .name>span {
+  display: block;
+  margin-left: 4px;
+  color: #000;
+  font-weight: 500;
+}
+
+section.hero .meta a {
+  flex-direction: row-reverse;
+}
+
+section.hero .meta a:hover {
+  color: #ea7a02;
+}
+
+section.hero .meta img {
+  display: block;
+  margin-right: 2px;
+  transition: .3s ease;
+}
+
+section.hero .meta a:hover img {
+  filter: invert(50%) sepia(43%) saturate(4076%) hue-rotate(9deg) brightness(102%) contrast(98%);
+}
+
+section.hero .meta>* {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+  section.hero .title h1 {
+    font-size: 40px
+  };
+}
+
+@media screen and (max-width: 768px) {
+  section.hero .title h1 {
+    font-size: 36px
+  };
+}
+
+@media screen and (max-width: 576px) {
+  section.hero .title h1 {
+    font-size: 32px
+  };
+}
+
+section.main>div>div>div>.post {
+  margin-bottom: 30px;
+}
+
+section.main>div>div>div>.post p a {
+  font-family: heebo;
+}
+
+section.main>div>div>div>.post p a:hover {
+  color: #ea7a02;
+}
+
+section.main>div>div>div>.post .featured-image {
+  width: 100%;
+  height: auto;
+  min-height: 415px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 2px;
+}
+
+section.main>div>div>div>.post .social-sharing {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+section.main>div>div>div>.post .social-sharing .views {
+  padding-right: 30px;
+  position: relative;
+}
+
+section.main>div>div>div>.post .social-sharing .views::after {
+  content: '';
+  position: absolute;
+  right: -30px;
+  top: 26px;
+  width: 52px;
+  height: 1px;
+  background: #eee;
+  transform: rotate(-75deg);
+}
+
+section.main>div>div>div>.post .social-sharing .views span {
+  display: block;
+  text-align: center;
+  font-family: heebo;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 16px;
+  color: #a0a0a0;
+  text-transform: uppercase;
+}
+
+section.main>div>div>div>.post .social-sharing .views span.bold {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 38px;
+  color: #555;
+  text-transform: unset;
+}
+
+section.main>div>div>div>.post .social-sharing .buttons {
+  padding-left: 35px;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.main>div>div>div>.post .social-sharing .buttons>div {
+  flex: 0 0 calc(33.33% - 8px);
+  border-radius: 2px;
+  opacity: 1;
+  transition: .3s ease;
+}
+
+section.main>div>div>div>.post .social-sharing .buttons>div:hover {
+  opacity: .8;
+}
+
+section.main>div>div>div>.post .social-sharing .buttons>div a {
+  font-family: heebo;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  color: #fff;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+}
+
+section.main>div>div>div>.post .social-sharing .buttons>div a img {
+  display: block;
+  filter: brightness(0) invert(1);
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 992px) {
+  section.main>div>div>div>.post .social-sharing .buttons>div a span {
+    display: none
+  }
+
+  section.main>div>div>div>.post .social-sharing .buttons>div a img {
+    height: 16px;
+    margin-right: 0
+  }
+
+  section.main>div>div>div>.post .featured-image {
+    min-height: 360px
+  };
+}
+
+@media screen and (max-width: 768px) {
+  section.main>div>div>div>.post .featured-image {
+    min-height: 300px
+  };
+}
+
+@media screen and (max-width: 576px) {
+  section.main>div>div>div>.post .featured-image {
+    min-height: 240px
+  }
+
+  section.main>div>div>div>.post .social-sharing .views span.bold {
+    font-size: 22px;
+    line-height: 20px
+  }
+
+  section.main>div>div>div>.post .social-sharing .views {
+    padding-right: 20px
+  }
+
+  section.main>div>div>div>.post .social-sharing .views::after {
+    right: -24px;
+    top: 16px;
+    width: 40px
+  }
+
+  section.main>div>div>div>.post .social-sharing .buttons {
+    padding-left: 25px
+  };
+}
+
+.sportsbooks-info .advertiser-geographical-area.vertical-long-cta~.advertiser-geographical-area.vertical-long-cta {
+  margin-top: 30px;
+}
+
+.sportsbooks-info .advertiser-geographical-area.vertical-long-cta .title {
+  position: relative;
+  padding-left: 35px;
+}
+
+.sportsbooks-info .advertiser-geographical-area.vertical-long-cta .title h3 {
+  margin-bottom: 0;
+}
+
+.sportsbooks-info .advertiser-geographical-area.vertical-long-cta .title::before {
+  counter-increment: x;
+  content: counter(x) ".";
+  position: absolute;
+  left: 0;
+  font-family: heebo;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.3;
+  font-size: 1.6em;
+}
+
+.advertiser-geographical-area.vertical-long-cta .area-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sportsbooks-info .advertiser-geographical-area.vertical-long-cta .banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+  border-radius: 2px;
+  margin: 15px 0 20px;
+}
+
+.sportsbooks-info .advertiser-geographical-area.vertical-long-cta .banner img {
+  height: 50px;
+  width: auto;
+  max-width: 100%;
+}
+
+.sportsbooks-info .advertiser-geographical-area.vertical-long-cta .content {
+  margin-bottom: 20px;
+}
+
+.sportsbooks-info .advertiser-geographical-area.vertical-long-cta .bonuses-donation-link a {
+  font-family: roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 42px;
+  padding: 0 16px;
+  background: #2ace4d;
+  border-radius: 2px;
+}
+
+.sportsbooks-info .advertiser-geographical-area.vertical-long-cta .bonuses-donation-link a img {
+  display: block;
+  height: 20px;
+  position: relative;
+  top: -2px;
+  margin-right: 10px;
+}
+
+.sportsbooks-info .advertiser-geographical-area.vertical-long-cta .bonuses-donation-link a:hover {
+  box-shadow: 0 0 8px 0 rgb(42 206 77);
+}
+
+.advertiser-geographical-area.hide {
+  display: none !important;
+}
+
+.advertiser-geographical-area.long-card:nth-child(n+2) {
+  margin-top: 10px;
+}
+
+.advertiser-geographical-area.long-card {
+  border: 1px solid #eee;
+}
+
+.advertiser-geographical-area.long-card,
+.advertiser-geographical-area.long-card a {
+  position: relative;
+}
+
+.advertiser-geographical-area.long-card a {
+  font-weight: 400;
+  font-size: 15px;
+  font-family: heebo;
+}
+
+.advertiser-geographical-area.long-card .area-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.advertiser-geographical-area.long-card>.top {
+  display: flex;
+  padding: 10px 0;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.advertiser-geographical-area.long-card>.bottom {
+  padding: 8px 1rem;
+  color: rgba(33, 37, 41, 0.60);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 135%;
+  background: #F4F7F8;
+}
+
+.advertiser-geographical-area.long-card .rank {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.advertiser-geographical-area.long-card .tag {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  background: #ff5f00;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 5px;
+  z-index: 1 */
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 2px;
+  background: #EA7A02;
+  margin-bottom: 8px;
+  color: #FFF;
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.advertiser-geographical-area.long-card .logo {
+  width: 125px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #e1e1e1;
+}
+
+.advertiser-geographical-area.long-card .logo img {
+  width: 90px;
+}
+
+.advertiser-geographical-area.long-card.apps .logo img {
+  border-radius: 7px;
+}
+
+.advertiser-geographical-area.long-card .left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.advertiser-geographical-area.long-card .copy {
+  width: 110px;
+  flex: 0 0 110px;
+}
+
+.advertiser-geographical-area.long-card .right {
+  padding: 0 15px;
+  /* flex: 0 0 345px;
+  width: 345px; */
+  display: flex;
+  align-items: center;
+}
+
+.advertiser-geographical-area.long-card .right>div:nth-child(n+2) {
+  padding-left: 15px;
+}
+
+.advertiser-geographical-area.long-card .long-donation-link>* {
+  display: flex;
+  padding: 0 30px;
+  height: 38px;
+  align-items: center;
+  border-radius: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #2ace4d;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.advertiser-geographical-area.long-card .long-donation-link>*:hover {
+  box-shadow: 0 0 8px 0 #2ace4d;
+  background: #2ace4d;
+}
+
+.advertiser-geographical-area.long-card .rating {
+  flex: 0 0 140px;
+  width: 140px;
+}
+
+.advertiser-geographical-area.long-card .rating .top .title a {
+  z-index: 1;
+}
+
+.advertiser-geographical-area.long-card .rating .bottom {
+  display: flex;
+  margin-top: 3px;
+  align-items: center;
+  font-size: 1.4em;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.advertiser-geographical-area.long-card .rating .bottom .star img {
+  display: block;
+  width: 18px;
+  margin-right: 5px;
+}
+
+.advertiser-geographical-area.long-card .column {
+  flex: 1;
+  padding-left: 15px;
+}
+
+.advertiser-geographical-area.long-card .bonus {
+  font-size: 1.3em;
+  line-height: 1.2;
+}
+
+.advertiser-geographical-area.long-card .bonus .value {
+  font-weight: 700;
+}
+
+.advertiser-geographical-area.long-card .operational-systems {
+  padding-left: 15px;
+}
+
+.advertiser-geographical-area.long-card .operational-systems>div:nth-child(n+2) {
+  margin-top: 10px;
+}
+
+.advertiser-geographical-area.long-card .operational-systems img {
+  width: 20px;
+}
+
+@media (min-width: 992px) {
+  .advertiser-geographical-area.long-card .rating.responsiveness,
+  .advertiser-geographical-area.long-card .copy.responsiveness {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991px) {
+  /* .advertiser-geographical-area.long-card {
+    font-size: 12px;
+    line-height: 1.5
+  }
+
+  .advertiser-geographical-area.long-card > .bottom {
+    font-size: 9px;
+  }
+
+  .advertiser-geographical-area.long-card .right > div:nth-child(n+2) {
+    padding-left: 10px
+  }
+
+  .advertiser-geographical-area.long-card .logo {
+    width: 100px;
+    height: auto;
+    border-right: 0
+  }
+
+  .advertiser-geographical-area.long-card .logo img {
+    width: 45px
+  }
+
+  .advertiser-geographical-area.long-card .tag {
+    padding: 3px;
+    font-size: 8px
+  }
+
+  .advertiser-geographical-area.long-card .index {
+    bottom: 4px;
+    left: 7px
+  }
+
+  .advertiser-geographical-area.long-card .right {
+    flex-basis: 160px;
+    width: 160px
+  }
+
+  .advertiser-geographical-area.long-card .rating {
+    flex-basis: 80px;
+    width: 80px
+  }
+
+  .advertiser-geographical-area.long-card .title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+  }
+
+  .advertiser-geographical-area.long-card .operational-systems img {
+    width: 12px
+  } */
+
+  .advertiser-geographical-area.long-card {
+
+    >.top,
+    .left,
+    .right,
+    .column {
+      display: block;
+      padding: 0;
+    }
+
+    >.top {
+      padding: 1rem;
+    }
+
+    .column {
+      padding: 12px 0;
+    }
+
+    .advertiser {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .rating {
+      width: 110px;
+      flex-basis: 110px;
+
+      & a {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .bottom {
+        margin-top: 0;
+        font-size: 14px;
+        line-height: 1.15;
+      }
+    }
+
+    .tag {
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      transform: translateY(-50%);
+    }
+
+    .bonus {
+      font-size: 15px;
+      line-height: 1.2;
+      padding: 12px 0 1rem;
+    }
+
+    .logo {
+      width: auto;
+      height: auto;
+      border-right: 0;
+      display: block;
+
+      & img {
+        width: 70px;
+      }
+    }
+
+    .rank,
+    .right>.rating {
+      display: none;
+    }
+
+    .right>div:nth-child(n+2) {
+      padding-left: 0;
+    }
+
+    .right {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0 1rem;
+    }
+
+    .copy {
+      width: auto;
+
+      :is(.title, .success) {
+        height: 2rem;
+      }
+    }
+
+    .top .left .copy:not(.responsiveness) {
+      display: none;
+    }
+
+    .long-donation-link>* {
+      width: 100%;
+      height: 2rem;
+      aspect-ratio: 1;
+      text-indent: -9999px;
+      overflow: hidden;
+      padding: 0;
+      justify-content: center;
+      font-size: 0;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 18px;
+        height: 18px;
+        background: url(https://apostas.tatame.com.br/static/wp/icone-cinza-claro-seta-baixo.svg) center/contain no-repeat;
+        filter: brightness(0) invert(1);
+        transform: rotate(-90deg)
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  /* .advertiser-geographical-area.long-card .right {
+    flex-basis: 140px;
+    width: 140px
+  }
+
+  .advertiser-geographical-area.long-card .long-donation-link > * {
+    width: 20px;
+    height: 20px
+  }
+
+  .advertiser-geographical-area.long-card .long-donation-link > *::before {
+    width: 10px;
+    height: 10px
+  }
+
+  .advertiser-geographical-area.long-card .logo {
+    width: 80px
+  } */
+}
+
+/*  */
+
+.author.card {
+  display: flex;
+  align-items: center;
+  background: #fdfdfd;
+  padding: 20px 25px;
+  margin: 40px 0;
+}
+
+.author.card a.area-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.author.card .left {
+  margin-bottom: 0;
+}
+
+.author.card .avatar {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ddd;
+  border-radius: 80px;
+}
+
+.author.card .avatar img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 80px;
+}
+
+.author.card .avatar img.default {
+  height: 40px;
+  width: auto;
+  border-radius: unset;
+}
+
+.author.card .right {
+  flex: 1;
+  padding-left: 30px;
+}
+
+.author.card .name {
+  margin-bottom: 12px;
+}
+
+.author.card .name a {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 25px;
+  color: #333;
+}
+
+.author.card .name a:hover {
+  color: #ea7a02;
+}
+
+.author.card .description {
+  margin-bottom: 15px;
+}
+
+.author.card .social-medias {
+  display: flex;
+}
+
+.author.card .social-medias .social-media~.social-media {
+  margin-left: 15px;
+}
+
+.author.card .social-medias .social-media img {
+  display: block;
+  height: 16px;
+  width: auto;
+  filter: brightness(0) invert(.3);
+  transition: .3s ease;
+}
+
+.author.card .social-medias .social-media img:hover {
+  filter: invert(50%) sepia(43%) saturate(4076%) hue-rotate(9deg) brightness(102%) contrast(98%);
+}
+
+.wp-post.horizontal.long-card .featured-image {
+  width: 280px;
+  height: auto;
+  min-height: 140px;
+  background-position: center;
+  background-size: cover;
+}
+
+.bottom-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+}
+
+.bottom-bar .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.banner-size {
+  display: none;
+}
+
+@media (max-width: 300px) {
+  .banner-size.micro {
+    display: block
+  };
+}
+
+@media (min-width: 301px) and (max-width: 575px) {
+  .banner-size.extra_small {
+    display: block
+  };
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .banner-size.small {
+    display: block
+  };
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .banner-size.medium {
+    display: block
+  };
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .banner-size.large {
+    display: block
+  };
+}
+
+@media (min-width: 1200px) {
+  .banner-size.extra_large {
+    display: block
+  };
+}
+
+.widget-area:not(.bottom-bar) {
+  position: relative;
+}
+
+.widget-area .widget~.widget {
+  margin-top: 40px;
+}
+
+.widget-area .widget .title {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-family: oswald, sans-serif;
+}
+
+.widget-area .widget .title h3 {
+  font-weight: 500;
+  font-size: 20px;
+  color: #212121;
+  padding-bottom: 8px;
+  position: relative;
+}
+
+.widget-area .widget .title h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  border-radius: 3px;
+  background: #ea7a02;
+}
+
+.widget ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.widget .navigation a {
+  font-family: heebo;
+  font-weight: 400;
+  font-size: 15px;
+  display: block;
+  padding: 7px 15px;
+  color: #a0a0a0;
+}
+
+@media screen and (min-width:1200px) {
+  .widget .navigation a {
+    line-height: 30px;
+    border-left: 3px solid #e0e0e0
+  }
+
+  .widget .navigation a.nav-h3 {
+    font-size: 14px;
+    padding-left: 40px
+  }
+
+  .widget .navigation a:hover {
+    border-color: #161e28;
+    background: #fff;
+    color: #000
+  };
+}
+
+@media (max-width: 1199px) {
+  .widget-area.right-sidebar .widget-navigation h3 {
+    display: none
+  }
+
+  .widget.widget-navigation .navigation ul {
+    position: fixed;
+    top: 90.14px;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    padding: 0 calc((100% - 960px)/2);
+    z-index: 4;
+    white-space: nowrap;
+    display: flex;
+    overflow: auto;
+    transform: translateY(-100px);
+    transition: .3s ease
+  }
+
+  .widget.widget-navigation .navigation a {
+    font-size: 13px;
+    padding: 12px 15px
+  }
+
+  .widget.widget-navigation .navigation a:hover {
+    border-bottom: 4px solid #161e28
+  }
+
+  .widget.widget-navigation.show .navigation ul {
+    transform: translateY(0)
+  };
+}
+
+#faqs {
+  margin-top: 40px;
+}
+
+.faqs>div {
+  margin-bottom: 40px !important;
+}
+
+.faqs h2 {
+  font-family: oswald;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 25px;
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #d9d9d9;
+  border-radius: 2px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.faqs h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 30px;
+  border-radius: 2px;
+  background-color: #ea7a02;
+}
+
+.faq-card {
+  padding: 0 0 25px;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.faq-card~.faq-card {
+  margin-top: 22px;
+}
+
+.faq-card .question {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faq-card .question h3 {
+  font-family: oswald;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 33px;
+  color: #555;
+  margin-bottom: 0;
+  transition: .3s ease;
+}
+
+.faq-card .question:hover h3 {
+  color: #ea7a02;
+}
+
+.faq-card .question .toggle {
+  flex: 0 0 44px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-card .question img {
+  height: 24px;
+  width: auto;
+  transition: .3s;
+}
+
+.faq-card:not(.close) .question img {
+  transform: rotate(180deg);
+}
+
+.faq-card .question:hover img {
+  filter: invert(50%) sepia(43%) saturate(4076%) hue-rotate(9deg) brightness(102%) contrast(98%);
+}
+
+.faq-card .content {
+  display: block;
+  padding-top: 10px;
+}
+
+.faq-card.close .content {
+  display: none;
+}
+
+.bonus span.value {
+  font-weight: 700;
+}
+
+.advertiser-geographical-area.small-card {
+  background: #fff;
+}
+
+.advertiser-geographical-area.small-card>.top {
+  display: flex;
+  align-items: center;
+  padding: 20px 25px 20px 20px;
+}
+
+.advertiser-geographical-area.small-card>.bottom {
+  padding: 8px 1rem;
+  color: rgba(33, 37, 41, 0.60);
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 135%;
+  background: #F4F7F8;
+}
+
+.advertiser-geographical-area.small-card,
+.advertiser-geographical-area.small-card a {
+  position: relative;
+}
+
+.advertiser-geographical-area.small-card:nth-child(n+2) {
+  margin-top: 15px;
+}
+
+.advertiser-geographical-area.small-card .area-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.advertiser-geographical-area.small-card .rank {
+  position: absolute;
+  top: -10px;
+  left: 6px;
+  font-size: 14px;
+  color: #fff;
+  height: 24px;
+  width: 24px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advertiser-geographical-area.small-card .logo img {
+  width: 70px;
+}
+
+.advertiser-geographical-area.small-card .bonus {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
+}
+
+.advertiser-geographical-area.small-card .copy {
+  margin-top: 8px;
+}
+
+.advertiser-geographical-area.small-card .copy :is(.title, .success) {
+  margin-bottom: 0;
+  height: 24px;
+}
+
+.advertiser-geographical-area.small-card .column,
+.advertiser-geographical-area.small-card .short-donation-link {
+  padding-left: 15px;
+}
+
+.advertiser-geographical-area.small-card .short-donation-link a {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  background: #2ace4d;
+}
+
+.advertiser-geographical-area.small-card .short-donation-link a:hover {
+  box-shadow: 0 0 8px 0 rgba(42, 206, 77, .7);
+}
+
+.advertiser-geographical-area.small-card .short-donation-link img {
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.advertiser-geographical-area.small-card .left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+
+.right-sidebar .advertiser-geographical-area.small-card {
+  border: 1px solid #e1e1e1;
+}
+
+.right-sidebar .advertiser-geographical-area.small-card:nth-child(n+2) {
+  margin-top: 15px;
+}
+
+.right-sidebar .advertiser-geographical-area.small-card>.top {
+  padding: 20px 15px;
+}
+
+.articles .wp-post .title {
+  margin-bottom: 12px;
+}
+
+.articles .wp-post .title a {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  z-index: 4;
+  position: relative;
+}
+
+.articles .wp-post .title a:hover {
+  color: #ea7a02;
+}
+
+.articles .wp-post a.area-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.articles .wp-post .excerpt {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.articles .wp-post .meta,
+.articles .wp-post .meta a {
+  font-family: heebo, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 16px;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.articles .wp-post .meta .author {
+  margin-right: 12px;
+}
+
+.articles .wp-post .meta .author a,
+.articles .wp-post .meta .author>span:nth-child(2),
+.articles .wp-post .meta .author span.name {
+  display: block;
+  margin-left: 4px;
+  color: #000;
+  font-weight: 500;
+}
+
+.articles .wp-post .meta a {
+  flex-direction: row-reverse;
+  z-index: 3;
+}
+
+.articles .wp-post .meta .author a:hover {
+  color: #ea7a02;
+}
+
+.articles .wp-post .meta img {
+  display: block;
+  margin-right: 2px;
+  transition: .3s ease;
+}
+
+.articles .wp-post .meta>* {
+  display: flex;
+  align-items: center;
+}
+
+.free-games-archive-template .articles .articles.grid,
+.category-template .articles .articles.grid,
+.betting-tips-archive-template .articles .articles.grid,
+.betting-tips-sport-archive-template .articles .articles.grid,
+.author-archive-template .articles .articles.grid,
+.homepage-template .articles .articles.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.free-games-archive-template .articles .articles.grid .right .wp-post:nth-child(n+3),
+.category-template .articles .articles.grid .right .wp-post:nth-child(n+3),
+.betting-tips-archive-template .articles .articles.grid .right .wp-post:nth-child(n+3),
+.betting-tips-sport-archive-template .articles .articles.grid .right .wp-post:nth-child(n+3),
+.homepage-template .articles .articles.grid .right .wp-post:nth-child(n+3) {
+  margin-top: 10px;
+}
+
+.wp-post.featured.small-card,
+.wp-post.featured.large-card {
+  height: 130px;
+  background: center/cover;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  position: relative;
+  color: #fff;
+}
+
+.wp-post.featured.small-card .area-link,
+.wp-post.featured.large-card .area-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #161e28, transparent 25%);
+}
+
+.wp-post.featured.small-card .bottom,
+.wp-post.featured.large-card .bottom {
+  position: relative;
+}
+
+.wp-post.featured.small-card .title,
+.wp-post.featured.large-card .title {
+  font-size: 1.1em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.wp-post.featured.large-card {
+  height: 100%;
+}
+
+.wp-post.featured.large-card .title {
+  font-size: 1.8em;
+  padding-bottom: 10px;
+  text-shadow: 0 2px 1px #161e28;
+}
+
+@media (max-width: 1199px) {
+  .wp-post.featured.large-card {
+    height: 210px
+  };
+}
+
+@media screen and (max-width: 768px) {
+  .articles .wp-post .title a {
+    font-size: 20px;
+    line-height: 1.2
+  };
+}
+
+@media (max-width: 360px) {
+  .wp-post.featured.large-card .title {
+    font-size: 1.5em
+  };
+}
+
+.articles-recommended>.title {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #d9d9d9;
+  border-radius: 2px;
+  margin-bottom: 40px !important;
+  position: relative;
+}
+
+.articles-recommended>.title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 30px;
+  border-radius: 2px;
+  background-color: #ea7a02;
+}
+
+.articles-recommended>.title h3 {
+  font-family: oswald;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+body:not(.post.index-template) .main>div>div>div>.articles {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.wp-post.vertical.medium-card .featured-image {
+  height: 200px;
+  background: center/cover;
+  margin-bottom: 15px;
+}
+
+.author-archive-template .articles .articles.grid,
+.free-games-archive-template .articles .articles.grid,
+.category-template .articles .articles.grid,
+.betting-tips-archive-template .articles .articles.grid,
+.betting-tips-sport-archive-template .articles .articles.grid,
+.homepage-template .articles .articles.grid {
+  justify-content: space-between;
+}
+
+.author-archive-template .articles .articles.grid>.wp-post.vertical.medium-card,
+.free-games-archive-template .articles .articles.grid>.wp-post.vertical.medium-card,
+.category-template .articles .articles.grid>.wp-post.vertical.medium-card,
+.betting-tips-archive-template .articles .articles.grid>.wp-post.vertical.medium-card,
+.betting-tips-sport-archive-template .articles .articles.grid>.wp-post.vertical.medium-card,
+.homepage-template .articles .articles.grid>.wp-post.vertical.medium-card {
+  flex: 0 0 calc(50% - 20px);
+  margin-bottom: 30px;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+
+  .author-archive-template .articles .articles.grid,
+  .free-games-archive-template .articles .articles.grid,
+  .category-template .articles .articles.grid,
+  .betting-tips-archive-template .articles .articles.grid,
+  .betting-tips-sport-archive-template .articles .articles.grid,
+  .homepage-template .articles .articles.grid {
+    justify-content: center
+  }
+
+  .author-archive-template .articles .articles.grid>.wp-post.vertical.medium-card,
+  .free-games-archive-template .articles .articles.grid>.wp-post.vertical.medium-card,
+  .category-template .articles .articles.grid>.wp-post.vertical.medium-card,
+  .betting-tips-archive-template .articles .articles.grid>.wp-post.vertical.medium-card,
+  .betting-tips-sport-archive-template .articles .articles.grid>.wp-post.vertical.medium-card,
+  .homepage-template .articles .articles.grid>.wp-post.vertical.medium-card {
+    flex: 0 0 100%
+  };
+}
+
+.articles .wp-post.small-card.horizontal {
+  position: relative;
+}
+
+.articles .wp-post.small-card.horizontal:nth-child(n+1) {
+  padding-bottom: 15px;
+}
+
+.articles .wp-post.small-card.horizontal:nth-child(n+2) {
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.articles .wp-post.small-card.horizontal .area-link {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  height: calc(100% - 30px);
+  width: 100%;
+}
+
+.articles .wp-post.small-card.horizontal .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.articles .wp-post.small-card.horizontal .featured-image {
+  flex: 0 0 100px;
+  height: auto;
+  min-height: 100px;
+  background-size: cover;
+  background-position: center;
+}
+
+.articles .wp-post.small-card.horizontal .right {
+  flex: 1;
+  padding: 0 12px;
+}
+
+.articles .wp-post.small-card.horizontal .title {
+  margin-bottom: 12px;
+}
+
+.articles .wp-post.small-card.horizontal .title a {
+  font-style: normal;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: justify;
+}
+
+.articles .wp-post.small-card.horizontal .published-date a {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.articles .wp-post.small-card.horizontal .published-date img {
+  display: block;
+  margin-right: 4px;
+}
+
+.articles .wp-post.small-card.horizontal .published-date span {
+  font-family: heebo;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #555;
+}
+
+.wp-post.horizontal.long-card {
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.articles .wp-post.horizontal.long-card a.area-link {
+  height: calc(100% - 50px) !important;
+  bottom: 30px;
+  top: unset;
+  z-index: 1;
+}
+
+.articles .wp-post.horizontal.long-card:first-child a.area-link {
+  height: calc(100% - 30px) !important;
+}
+
+.wp-post.horizontal.long-card~.wp-post.horizontal.long-card {
+  padding-top: 20px;
+  border-top: 1px solid #d9d9d9;
+}
+
+.wp-post.horizontal.long-card .top {
+  margin-bottom: 14px;
+}
+
+.wp-post.horizontal.long-card .bottom {
+  display: flex;
+}
+
+.wp-post.horizontal.long-card .bottom .left {
+  position: relative;
+  flex: 0 0 280px;
+  height: auto;
+  min-height: 160px;
+}
+
+.wp-post.horizontal.long-card .bottom .left .featured-image {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.wp-post.horizontal.long-card .bottom .right {
+  flex: 1;
+  padding-left: 30px;
+}
+
+.wp-post.horizontal.long-card .read-more a {
+  z-index: 3;
+  font-family: heebo;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #555;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: fit-content;
+  padding: 0 20px;
+  position: relative;
+}
+
+.wp-post.horizontal.long-card .read-more a:hover {
+  color: #fff;
+  background: #ea7a02;
+  border-color: #ea7a02;
+}
+
+@media screen and (max-width: 768px) {
+  .wp-post.horizontal.long-card .bottom {
+    display: block
+  }
+
+  .wp-post.horizontal.long-card .bottom .right {
+    padding-left: 0
+  };
+}
+
+.hero .articles.grid {
+  display: flex;
+}
+
+.hero .articles.grid .left {
+  flex: 1;
+  display: flex;
+}
+
+.hero .articles.grid .right {
+  flex: 0 0 25%;
+}
+
+.counters {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.counter {
+  flex: 0 0 50%;
+  text-align: center;
+  padding-top: 25px;
+  line-height: 1;
+}
+
+.counter img {
+  height: 34px;
+  filter: brightness(0) opacity(.5);
+  margin: 0 auto;
+}
+
+.counter .title {
+  text-transform: uppercase;
+}
+
+.counter .prefix {
+  font-size: 1.2em;
+  font-weight: 700;
+  padding-top: 5px;
+  line-height: 1;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  font-weight: 700;
+  font-family: heebo, sans-serif;
+  position: relative;
+}
+
+.pagination img {
+  width: auto;
+  height: 16px;
+}
+
+.pagination .left img {
+  transform: rotate(180deg);
+}
+
+.pagination .pages,
+.pagination .navigation {
+  display: flex;
+  margin-bottom: 0 !important;
+}
+
+.pagination .pages .page,
+.pagination .navigation {
+  height: 30px;
+  width: 30px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s ease;
+}
+
+.pagination .pages .page~.page,
+.pagination .navigation.right {
+  margin-left: 10px;
+}
+
+.pagination .navigation.left {
+  margin-right: 10px;
+}
+
+.pagination .pages .page.current {
+  background: #ea7a02;
+  color: #fff;
+  border: none;
+  cursor: unset;
+}
+
+.pagination .pages .page:not(.current):hover,
+.pagination .navigation:hover {
+  background: #eee;
+}
+
+.content-block:not(:first-child) {
+  margin-top: 20px;
+}
+
+.content-block img,
+.content img {
+  width: 100%;
+}
+
+.content ul,
+.content-block ul,
+.content-element ul {
+  margin: 10px 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.content ul ::marker,
+.content-block ul ::marker,
+.content-element ul ::marker {
+  color: #949da6;
+}
+
+.content ul li:nth-child(n+2),
+.content ol li:nth-child(n+2),
+.content-block ul li:nth-child(n+2),
+.content-block ol li:nth-child(n+2),
+.content-element ul li:nth-child(n+2),
+.content-element ol li:nth-child(n+2) {
+  margin-top: 5px;
+}
+
+.content ol,
+.content-block ol,
+.content-element ol {
+  padding-left: 20px;
+  margin: 10px 0;
+  list-style: decimal;
+}
+
+.content table {
+  border: 1px solid #e1e1e1;
+  margin: 15px 0;
+}
+
+.content td,
+.content th {
+  padding: 5px 10px;
+}
+
+.content th {
+  text-align: left;
+}
+
+.content tbody tr:nth-child(odd) {
+  background: #eee;
+}
+
+@media (max-width: 991px) {
+  .content table {
+    display: block;
+    overflow: auto
+  }
+
+  .bettingtip.index-template .content table {
+    display: table;
+  }
+}
+
+/*  */
+
+.bottom-cta {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  box-shadow: 0 0 10px rgb(0 0 0/.2);
+  z-index: 5;
+  /* overflow: hidden; */;
+}
+
+.bottom-cta .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.bottom-cta .advertiser-geographical-area.long-card {
+  border: 0;
+
+  >.bottom {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: calc(50% - 50vw);
+      width: 100vw;
+      height: 100%;
+      background: #f4f7f8;
+    }
+
+    &>* {
+      position: relative;
+    }
+  }
+
+  .tag {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    transform: translateY(-50%);
+  }
+
+  .logo {
+    width: auto;
+    height: auto;
+    border-right: 0;
+    display: block;
+
+    & img {
+      width: 70px;
+    }
+  }
+
+  .left {
+    padding-left: 15px;
+  }
+
+  @media (min-width: 992px) {
+    .rating {
+      display: flex;
+      align-items: center;
+      font-size: 1.4em;
+      line-height: 1;
+      font-weight: 700;
+
+      img {
+        display: block;
+        width: 18px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    .left {
+      padding-left: 0;
+    }
+
+    >.top {
+      padding: 1rem 0;
+    }
+  };
+}
+
+@media (max-width: 575px) {
+  .bottom-cta .close-button {
+    display: none;
+  };
+}
+
+/*  */
+
+.index-template .col-xl-8>.featured-image img {
+  width: 100%;
+}
+
+.advertisers-geographical-areas .show-more {
+  font-family: heebo;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #555;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: .3s ease;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.advertisers-geographical-areas .show-more::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  width: 60px;
+  background: #a0a0a0;
+  transition: .3s ease;
+}
+
+.advertisers-geographical-areas .show-more:hover {
+  color: #ea7a02;
+}
+
+.advertisers-geographical-areas .show-more:hover::after {
+  background: #ea7a02;
+}
+
+.free-game-review-template section.hero .introduction .content,
+.post.index-template section.hero .introduction .content {
+  margin-bottom: 15px;
+}
+
+.page.index-template section.hero .meta {
+  display: none !important;
+}
+
+.template-404 .widget.widget-navigation {
+  display: none !important;
+}
+
+.template-404 .hero a {
+  font-size: 15px;
+}
+
+.widget.widget-navigation.fixed {
+  position: fixed;
+  margin-top: 20px !important;
+}
+
+.widget.widget-navigation.fixed.fixed-bottom {
+  position: absolute;
+}
+
+.author-archive-template .widget.widget-navigation {
+  display: none;
+}
+
+.author-archive-template section.hero {
+  padding: 25px 0 0;
+}
+
+.author-archive-template .hero .author.card {
+  display: block;
+  background: #fff;
+  margin: 20px 0 0;
+}
+
+.author-archive-template .hero .author.card .wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 24px 48px;
+}
+
+.author-archive-template .hero .author.card .name h1 {
+  font-family: oswald;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: #333;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  body:not(.author-archive-template) .author.card,
+  .author-archive-template .hero .author.card .wrapper {
+    display: block
+  }
+
+  .author.card .left {
+    margin-bottom: 15px
+  }
+
+  .author.card .right {
+    padding-left: 0
+  };
+}
+
+.widget-navigation .navigation ul {
+  z-index: 10;
+}
+
+@media screen and (max-width: 1199px) {
+  .widget-navigation {
+    margin-top: 0 !important;
+  };
+}
+
+
+/* Pop Ups */
+
+
+/* Not Recommended Pop Up */
+.not-recommended-pop-up {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0 0 0/0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1111;
+}
+
+.not-recommended-pop-up .pop-up-container {
+  position: relative;
+  padding: 1px 3rem 40px;
+  background: #FFFFFF;
+  border: 2px solid #EEEEEE;
+  border-radius: 2px;
+  text-align: center;
+  width: 100%;
+  max-width: 1056px;
+}
+
+.not-recommended-pop-up .close-button {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  cursor: pointer;
+}
+
+.not-recommended-pop-up .close-button img {
+  filter: brightness(0) invert(1);
+  height: 24px;
+  width: 24px;
+}
+
+.not-recommended-pop-up .pop-up-container>.icon img {
+  height: 32px;
+  width: 32px;
+}
+
+.not-recommended-pop-up .introduction {
+  font-family: heebo;
+  font-size: 16px;
+  margin-bottom: 34px;
+}
+
+.not-recommended-pop-up .introduction .title h2 {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 29px;
+  margin-bottom: 5px;
+  color: #444444;
+}
+
+.not-recommended-pop-up .recommended.options {
+  display: grid;
+  grid-template-columns: calc(33.33% - 21px) calc(33.33% - 21px) calc(33.33% - 21px);
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 576px) {
+  .not-recommended-pop-up .pop-up-container>.icon {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #EEEEEE;
+    margin: -40px auto 2rem;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  };
+}
+
+
+@media screen and (max-width: 1199px) {
+  .not-recommended-pop-up {
+    align-items: flex-end;
+  }
+
+  .not-recommended-pop-up .pop-up-container {
+    border-radius: 16px 16px 0px 0px;
+    padding: 60px 24px 24px;
+    border: none;
+  }
+
+  .not-recommended-pop-up .pop-up-container::before {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 4px;
+    left: calc(50% - 80px);
+    top: 16px;
+    background: #8B95A3;
+    opacity: 0.25;
+    border-radius: 80px;
+  }
+
+  .not-recommended-pop-up .introduction .title h2 {
+    font-size: 20px;
+  }
+
+  .not-recommended-pop-up .recommended.options {
+    gap: 16px;
+    overflow: auto;
+    margin: 0 -15px;
+    padding: 0 15px 24px;
+    grid-template-columns: 304px 304px 304px;
+  }
+
+  .not-recommended-pop-up .pop-up-container>.icon {
+    display: none;
+  }
+
+  .not-recommended-pop-up .close-button {
+    top: 24px;
+    right: 24px;
+  }
+
+  .not-recommended-pop-up .close-button img {
+    filter: none;
+  };
+}
+
+@media screen and (max-width: 757px) {
+  .not-recommended-pop-up .introduction {
+    margin-bottom: 24px;
+  }
+
+  .not-recommended-pop-up .introduction .title h2 {
+    font-size: 18px;
+  }
+;
+}
+
+
+/* Advertiser Geographical Areas */
+.advertiser-geographical-area.long-card.not-recommended {
+  pointer-events: none !important;
+}
+
+.advertiser-geographical-area.long-card.not-recommended .long-donation-link>* {
+  filter: grayscale(1) !important;
+}
+
+
+/* */
+
+.advertiser-geographical-area.vertical.medium-card {
+  position: relative;
+  padding: 24px 32px;
+  border: 1px solid #EEEEEE;
+}
+
+.advertiser-geographical-area.medium-card .area-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.advertiser-geographical-area.vertical.medium-card img {
+  display: block;
+  width: auto;
+}
+
+
+.advertiser-geographical-area.vertical.medium-card .rank {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #212121;
+}
+
+
+.advertiser-geographical-area.vertical.medium-card .logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.advertiser-geographical-area.vertical.medium-card .logo img {
+  height: 36px;
+  max-width: 100%;
+}
+
+
+.advertiser-geographical-area.vertical.medium-card .rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advertiser-geographical-area.vertical.medium-card .rating .value {
+  position: relative;
+  top: 2px;
+  margin-left: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #444444;
+}
+
+.advertiser-geographical-area.vertical.medium-card .rating .stars {
+  display: flex;
+}
+
+.advertiser-geographical-area.vertical.medium-card .rating .stars img {
+  height: 18px;
+  width: 18px;
+}
+
+.advertiser-geographical-area.vertical.medium-card .rating .stars img~img {
+  margin-left: 6px;
+}
+
+
+.advertiser-geographical-area.vertical.medium-card>.bottom {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #EEEEEE;
+}
+
+
+.advertiser-geographical-area.vertical.medium-card .bonus {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 24px;
+}
+
+
+.advertiser-geographical-area.vertical.medium-card .payment-methods {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.advertiser-geographical-area.vertical.medium-card .payment-methods>*:nth-child(n+2) {
+  margin-left: 15px;
+}
+
+.advertiser-geographical-area.vertical.medium-card .payment-methods>a img,
+.advertiser-geographical-area.vertical.medium-card .payment-methods>img {
+  height: 12px !important;
+  filter: grayscale(1);
+  flex: unset;
+}
+
+.advertiser-geographical-area.vertical.medium-card .payment-methods>a img:hover,
+.advertiser-geographical-area.vertical.medium-card .payment-methods>img:hover {
+  filter: grayscale(0);
+}
+
+
+.advertiser-geographical-area.vertical.medium-card .long-donation-link {
+  display: flex;
+  justify-content: center;
+}
+
+.advertiser-geographical-area.vertical.medium-card .long-donation-link>* {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 30px;
+  height: 38px;
+  max-width: 180px;
+
+  border-radius: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #2ace4d;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.advertiser-geographical-area.vertical.medium-card .long-donation-link>*:hover {
+  box-shadow: 0 0 8px 0 #2ace4d;
+  background: #2ace4d;
+}
+
+
+@media screen and (max-width: 767px) {
+  .advertiser-geographical-area.vertical.medium-card {
+    padding: 18px;
+  }
+
+  .advertiser-geographical-area.vertical.medium-card .logo {
+    margin-bottom: 14px;
+  }
+
+  .advertiser-geographical-area.vertical.medium-card>.bottom {
+    margin-top: 14px;
+    padding-top: 14px;
+  }
+
+  .advertiser-geographical-area.vertical.medium-card .bonus {
+    margin-bottom: 14px;
+  }
+
+  .advertiser-geographical-area.vertical.medium-card .payment-methods {
+    display: none;
+  };
+}
+
+
+/*  */
+
+.limits.table {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333333;
+  border: unset;
+}
+
+.limits.table tr:nth-child(odd) td {
+  background: #eee;
+}
+
+.limits.table thead th {
+  background: #FFF !important;
+}
+
+.limits.table th {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #555555;
+
+  text-align: left;
+  padding: 10px 0;
+}
+
+.limits.table tbody td {
+  border-top: 1px solid #EEE;
+  border-bottom: 1px solid #EEE;
+}
+
+.limits.table td {
+  padding: 14px 0;
+  background: #FFF;
+}
+
+.limits.table th:last-child,
+.limits.table td:last-child {
+  padding-right: 20px;
+}
+
+.limits.table th:first-child,
+.limits.table td:first-child {
+  padding-left: 20px;
+}
+
+.limits.table td:first-child>* {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+}
+
+.limits.table td .title a {
+  font-family: 'Roboto' !important;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #333333;
+}
+
+.limits.table td .title a:hover {
+  color: #ea7a02;
+}
+
+.limits.table .logo {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.limits.table .logo .area-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.limits.table .logo img {
+  width: auto;
+  height: 20px;
+}
+
+
+@media (min-width: 768px) {
+
+  .limits.table .minimum,
+  .limits.table .maximum {
+    text-align: center;
+  };
+}
+
+@media (max-width: 991px) {
+  .limits.table {
+    display: table;
+    overflow: unset;
+  };
+}
+
+@media (max-width: 767px) {
+
+  .limits.table,
+  .limits.table thead,
+  .limits.table tbody {
+    display: block;
+  }
+
+  .limits.table {
+    overflow: auto;
+  }
+
+  .limits.table th {
+    padding: 8px 14px;
+  }
+
+  .limits.table td {
+    padding: 12px 14px;
+  }
+
+  .limits.table tr>*:first-child {
+    border-right: 1px solid #dedede;
+    min-width: 100px;
+    flex: 1;
+    position: sticky;
+    left: 0;
+  }
+
+  .limits.table th:first-child,
+  .limits.table td:first-child {
+    padding-left: 14px !important;
+  }
+
+  .limits.table td:first-child span {
+    display: none;
+  }
+
+  .limits.table th:nth-child(n+2),
+  .limits.table td:nth-child(n+2) {
+    white-space: break-spaces;
+    width: 130px;
+    flex: 0 0 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .limits.table tr {
+    display: flex;
+  }
+
+  .limits.table .wrapper .title {
+    display: none !important;
+  }
+
+  .limits.table .logo {
+    margin: 0 auto;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .limits.table .logo img {
+    width: 18px;
+    height: 18px;
+  };
+}
+
+
+
+
+/* Payment Methods */
+.payment-methods-archive-template section.hero {
+  padding-bottom: 0;
+}
+
+.payment-methods.long-cards .show-more {
+  font-family: heebo;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #555;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: .3s ease;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.payment-methods.long-cards .show-more::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  width: 60px;
+  background: #a0a0a0;
+  transition: .3s ease;
+}
+
+.payment-methods.long-cards .show-more:hover {
+  color: #ea7a02;
+}
+
+.payment-methods.long-cards .show-more:hover::after {
+  background: #ea7a02;
+}
+
+
+/* Payment Method Horizontal Crad */
+.payment-method.horizontal.long-card {
+  border: 1px solid #eee;
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment-method.horizontal.long-card.hide {
+  display: none !important;
+}
+
+.payment-method.horizontal.long-card .area-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.payment-method.horizontal.long-card:nth-child(n+2) {
+  margin-top: 10px;
+}
+
+.payment-method.horizontal.long-card,
+.payment-method.horizontal.long-card a {
+  position: relative;
+}
+
+.payment-method.horizontal.long-card .rank {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+
+/* left */
+.payment-method.horizontal.long-card .left {
+  flex: 0 0 270px;
+  display: flex;
+  align-items: center;
+}
+
+.payment-method.horizontal.long-card .left>div {
+  flex: 0 0 135px;
+}
+
+.payment-method.horizontal.long-card .logo {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+
+  margin-right: 24px;
+  padding-right: 24px;
+}
+
+.payment-method.horizontal.long-card .logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2px;
+  background: #EEEEEE;
+}
+
+.payment-method.horizontal.long-card .logo img {
+  display: block;
+  height: 25px;
+  width: auto;
+}
+
+
+/* payment-info */
+.payment-method.horizontal.long-card .payment-info .name {
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 21px;
+  color: #212121;
+  margin-bottom: 5px;
+}
+
+.payment-method.horizontal.long-card .payment-info .info {
+  font-size: 12px;
+  line-height: 14px;
+  color: #555555;
+}
+
+
+/* long-donation-link */
+.payment-method.horizontal.long-card .long-donation-link>* {
+  display: flex;
+  padding: 0 30px;
+  height: 38px;
+  max-width: 141px;
+  align-items: center;
+  border-radius: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #2ace4d;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.payment-method.horizontal.long-card .long-donation-link>*:hover {
+  box-shadow: 0 0 8px 0 #2ace4d;
+  background: #2ace4d;
+}
+
+
+/* advertisers-geographical-areas*/
+.payment-method.horizontal.long-card .advertisers-geographical-areas {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.payment-method.horizontal.long-card .advertisers-geographical-areas>* {
+  display: flex;
+  border: 3px solid #fff;
+  border-radius: 13px;
+  width: 45px;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 60% auto !important;
+  color: #f7f7fc;
+  font-size: 13px;
+  font-weight: 500;
+  transition: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.payment-method.horizontal.long-card .advertisers-geographical-areas a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.payment-method.horizontal.long-card .advertisers-geographical-areas .count {
+  padding-left: 10px;
+  cursor: pointer;
+  background: #211f38;
+}
+
+.payment-method.horizontal.long-card .advertisers-geographical-areas img {
+  width: 20px;
+  height: 20px;
+  padding-left: 2px;
+}
+
+.payment-method.horizontal.long-card .advertisers-geographical-areas>*:nth-child(n+2) {
+  margin-left: -10px;
+}
+
+.payment-method.horizontal.long-card .advertisers-geographical-areas>* {
+  position: relative;
+}
+
+.payment-method.horizontal.long-card .advertisers-geographical-areas>*:nth-child(1) {
+  z-index: 4;
+}
+
+.payment-method.horizontal.long-card .advertisers-geographical-areas>*:nth-child(2) {
+  z-index: 3;
+}
+
+.payment-method.horizontal.long-card .advertisers-geographical-areas>*:nth-child(3) {
+  z-index: 2;
+}
+
+.payment-method.horizontal.long-card .advertisers-geographical-areas>*:nth-child(4) {
+  z-index: 1;
+}
+
+.payment-method.horizontal.long-card .advertisers-geographical-areas>*:hover {
+  z-index: 5;
+  border-color: #2ace4d;
+}
+
+
+/* review */
+.payment-method.horizontal.long-card .review {
+  text-align: center;
+}
+
+.payment-method.horizontal.long-card .review a {
+  font-family: roboto, sans-serif;
+  z-index: 1;
+}
+
+.payment-method.horizontal.long-card .review a:hover {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 991px) and (min-width:768px) {
+  .payment-methods.long-cards>.show-more {
+    margin: 25px -15px 10px;
+  };
+}
+
+@media screen and (max-width: 991px) {
+  .payment-methods.long-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  .payment-methods.long-cards>div {
+    flex: 0 0 calc(50% - 20px);
+    margin: 10px;
+  }
+
+  .payment-methods.long-cards>.show-more {
+    flex: 0 0 100%;
+  }
+
+  .payment-method.horizontal.long-card {
+    padding: 20px;
+  }
+
+  .payment-method.horizontal.long-card .left,
+  .payment-method.horizontal.long-card {
+    flex-direction: column;
+  }
+
+  .payment-method.horizontal.long-card .left,
+  .payment-method.horizontal.long-card .left>div {
+    flex: unset;
+    text-align: center;
+  }
+
+  .payment-method.horizontal.long-card .rank {
+    display: none;
+  }
+
+  .payment-method.horizontal.long-card .logo {
+    height: 25px;
+    margin-right: 0;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .payment-method.horizontal.long-card .logo::before {
+    display: none;
+  }
+
+  .payment-method.horizontal.long-card .middle {
+    margin: 20px 0;
+  };
+}
+
+@media screen and (max-width: 767px) {
+  .payment-methods.long-cards {
+    display: block;
+    margin: 0;
+  }
+
+  .payment-methods.long-cards>div {
+    margin: 10px 0;
+  };
+}
+
+
+/* Betting Tips */
+
+/* Horizontal Medium Card */
+.betting-tip.horizontal.medium.card {
+  position: relative;
+  border: 1px solid #EEEEEE;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 32px;
+  margin-top: 20px;
+}
+
+.betting-tip.horizontal.medium.card a.area-link {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.betting-tip.horizontal.medium.card .label {
+  font-family: 'Heebo';
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+.betting-tip.horizontal.medium.card .middle {
+  position: relative;
+  padding: 0 48px;
+  height: 70px;
+}
+
+.betting-tip.horizontal.medium.card .middle::before,
+.betting-tip.horizontal.medium.card .middle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: #EEEEEE;
+}
+
+.betting-tip.horizontal.medium.card .middle::before {
+  left: 0;
+}
+
+.betting-tip.horizontal.medium.card .middle::after {
+  right: 0;
+}
+
+.betting-tip.horizontal.medium.card .tip {
+  font-size: 16px;
+  line-height: 19px;
+  color: #212121;
+}
+
+.betting-tip.horizontal.medium.card .middle .bottom {
+  display: flex;
+  align-items: center;
+}
+
+.betting-tip.horizontal.medium.card .odd {
+  font-size: 16px;
+  line-height: 19px;
+  color: #212121;
+  margin-right: 16px;
+}
+
+.betting-tip.horizontal.medium.card .logo img {
+  display: block;
+  height: 20px;
+  width: auto;
+}
+
+.betting-tip.horizontal.medium.card .bonus {
+  font-size: 16px;
+  line-height: 19px;
+  color: #212121;
+}
+
+.betting-tip.horizontal.medium.card .donation-link {
+  align-self: center;
+}
+
+.betting-tip.horizontal.medium.card .donation-link>* {
+  position: relative;
+  display: flex;
+  padding: 0 15px;
+  height: 38px;
+  align-items: center;
+  border-radius: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #2ace4d;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.betting-tip.horizontal.medium.card .donation-link>*:hover {
+  box-shadow: 0 0 8px 0 #2ace4d;
+  background: #2ace4d;
+}
+
+.betting-tip.horizontal.medium.card .donation-link>* span {
+  display: none;
+}
+
+.betting-tip.horizontal.medium.card .donation-link>* img {
+  display: block;
+  height: 16px;
+  width: 16px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .betting-tip.horizontal.medium.card {
+    padding: 24px;
+    flex-wrap: wrap;
+  }
+
+  .betting-tip.horizontal.medium.card .middle {
+    padding: 0;
+  }
+
+  .betting-tip.horizontal.medium.card .middle::before,
+  .betting-tip.horizontal.medium.card .middle::after {
+    display: none;
+  }
+
+  .betting-tip.horizontal.medium.card .right {
+    flex: 0 0 100%;
+  }
+
+  .betting-tip.horizontal.medium.card .donation-link {
+    margin-top: 24px;
+    flex: 0 0 100%;
+  }
+
+  .betting-tip.horizontal.medium.card .donation-link>* {
+    justify-content: center;
+  }
+
+  .betting-tip.horizontal.medium.card .donation-link>* span {
+    display: block;
+  };
+}
+
+@media screen and (max-width: 575px) {
+  .betting-tip.horizontal.medium.card {
+    padding: 16px;
+  }
+
+  .betting-tip.horizontal.medium.card .left {
+    flex: 0 0 100%;
+  }
+
+  .betting-tip.horizontal.medium.card .middle {
+    margin-top: 24px;
+  };
+}
+
+
+/*  */
+
+.free-games.navigation>.title,
+.articles.navigation>.title,
+.betting-tips.navigation>.title {
+  padding-bottom: 10px;
+  border-bottom: 2px solid #d9d9d9;
+  border-radius: 2px;
+  margin-bottom: 30px !important;
+  position: relative;
+}
+
+.free-games.navigation>.title::after,
+.articles.navigation>.title::after,
+.betting-tips.navigation>.title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 30px;
+  border-radius: 2px;
+  background-color: #ea7a02;
+}
+
+.free-games.navigation>.title h3,
+.articles.navigation>.title h3,
+.betting-tips.navigation>.title h3 {
+  font-family: oswald;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+
+/*  */
+
+.free-games.navigation .cards,
+.articles.navigation .cards,
+.betting-tips.navigation .cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.free-games.navigation .cards>div,
+.articles.navigation .cards>div,
+.betting-tips.navigation .cards>div {
+  flex: 1;
+  margin: 0 10px;
+}
+
+
+/* Horizontal Small Card Navigation */
+.wp-post.horizontal.small.card.navigation,
+.betting-tip.horizontal.small.card.navigation {
+  position: relative;
+  border: 1px solid #EEEEEE;
+  padding: 12px 15px;
+}
+
+.wp-post.horizontal.small.card.navigation a.area-link,
+.betting-tip.horizontal.small.card.navigation a.area-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.wp-post.horizontal.small.card.navigation .title,
+.betting-tip.horizontal.small.card.navigation .title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #212121;
+  margin-bottom: 10px;
+}
+
+.wp-post.horizontal.small.card.navigation .meta>*,
+.betting-tip.horizontal.small.card.navigation .meta>* {
+  display: flex;
+  align-items: center;
+}
+
+.wp-post.horizontal.small.card.navigation .meta,
+.wp-post.horizontal.small.card.navigation .meta a,
+.betting-tip.horizontal.small.card.navigation .meta,
+.betting-tip.horizontal.small.card.navigation .meta a {
+  font-family: heebo, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 16px;
+  color: #a0a0a0;
+  display: flex;
+  align-items: center;
+}
+
+.wp-post.horizontal.small.card.navigation .meta .author,
+.betting-tip.horizontal.small.card.navigation .meta .author {
+  margin-right: 12px;
+}
+
+.wp-post.horizontal.small.card.navigation .meta .author .name a,
+.wp-post.horizontal.small.card.navigation .meta .author .name>span,
+.betting-tip.horizontal.small.card.navigation .meta .author .name a,
+.betting-tip.horizontal.small.card.navigation .meta .author .name>span {
+  display: block;
+  margin-left: 4px;
+  color: #000;
+  font-weight: 500;
+}
+
+.wp-post.horizontal.small.card.navigation .meta a,
+.betting-tip.horizontal.small.card.navigation .meta a {
+  flex-direction: row-reverse;
+}
+
+.wp-post.horizontal.small.card.navigation .meta a:hover,
+.betting-tip.horizontal.small.card.navigation .meta a:hover {
+  color: #ea7a02;
+}
+
+.wp-post.horizontal.small.card.navigation .icon a,
+.betting-tip.horizontal.small.card.navigation .icon a {
+  position: absolute;
+  top: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  background: #EA7A02;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wp-post.horizontal.small.card.navigation .icon a img,
+.betting-tip.horizontal.small.card.navigation .icon a img {
+  display: block;
+  height: 16px;
+  width: 16px;
+}
+
+.wp-post.horizontal.small.card.navigation:hover .icon a,
+.betting-tip.horizontal.small.card.navigation:hover .icon a {
+  box-shadow: 0 0 8px 0 #EA7A02;
+}
+
+.free-games.navigation .cards>div.previous .wp-post.horizontal.small.card.navigation .icon img,
+.articles.navigation .cards>div.previous .wp-post.horizontal.small.card.navigation .icon img,
+.betting-tips.navigation .cards>div.previous .betting-tip.horizontal.small.card.navigation .icon img {
+  transform: rotate(180deg);
+}
+
+.free-games.navigation .cards>div.previous .wp-post.horizontal.small.card.navigation,
+.articles.navigation .cards>div.previous .wp-post.horizontal.small.card.navigation,
+.betting-tips.navigation .cards>div.previous .betting-tip.horizontal.small.card.navigation {
+  padding-left: 30px;
+}
+
+.free-games.navigation .cards>div.previous .wp-post.horizontal.small.card.navigation .icon a,
+.articles.navigation .cards>div.previous .wp-post.horizontal.small.card.navigation .icon a,
+.betting-tips.navigation .cards>div.previous .betting-tip.horizontal.small.card.navigation .icon a {
+  left: -15px;
+}
+
+.free-games.navigation .cards>div.next .wp-post.horizontal.small.card.navigation,
+.articles.navigation .cards>div.next .wp-post.horizontal.small.card.navigation,
+.betting-tips.navigation .cards>div.next .betting-tip.horizontal.small.card.navigation {
+  padding-right: 30px;
+}
+
+.free-games.navigation .cards>div.next .wp-post.horizontal.small.card.navigation .icon a,
+.articles.navigation .cards>div.next .wp-post.horizontal.small.card.navigation .icon a,
+.betting-tips.navigation .cards>div.next .betting-tip.horizontal.small.card.navigation .icon a {
+  right: -15px;
+}
+
+
+@media screen and (max-width: 767px) {
+
+  .free-games.navigation .cards,
+  .articles.navigation .cards,
+  .betting-tips.navigation .cards {
+    display: block;
+  }
+
+  .free-games.navigation .cards>div:nth-child(n+2),
+  .articles.navigation .cards>div:nth-child(n+2),
+  .betting-tips.navigation .cards>div:nth-child(n+2) {
+    margin-top: 10px;
+  };
+}
+
+
+/*  */
+
+.app-review-template .sportsbook .advertiser-geographical-area.long-card .rating {
+  display: block;
+  font-size: unset;
+  line-height: 1.4;
+}
+
+.app-review-template .sportsbook .advertiser-geographical-area.long-card .long-donation-link>*::before {
+  height: 18px !important;
+  width: 18px !important;
+}
+
+
+@media screen and (max-width: 991px) {
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .logo {
+    width: 120px;
+  }
+
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .rating {
+    flex: 0 0 100px;
+  }
+
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .bonus {
+    flex: 0 0 162px;
+  }
+
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .right {
+    flex: unset;
+    width: auto;
+    margin-right: 15px;
+  };
+}
+
+@media screen and (max-width: 767px) {
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .logo {
+    width: 45px;
+    margin-left: 15px;
+  }
+
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .rating {
+    flex-basis: 80px;
+  }
+
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .right {
+    padding-right: 0;
+  }
+
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .operational-systems {
+    width: 27px;
+  };
+}
+
+@media screen and (max-width: 575px) {
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .right {
+    margin-right: 0;
+    width: 125px;
+  }
+
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .bonus {
+    flex: 1;
+  }
+
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .rating {
+    flex-basis: 60px;
+  }
+
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .title {
+    width: 60px;
+  }
+
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .long-donation-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .app-review-template .sportsbook .advertiser-geographical-area.long-card .long-donation-link>* {
+    height: 30px;
+    width: 30px;
+  };
+}
+
+
+
+/*  */
+
+section.main>div>div>div>.post .featured-image.iframe {
+  display: flex;
+}
+
+section.main>div>div>div>.post .featured-image.iframe iframe {
+  border-radius: 2px;
+}
+
+/*  */
+
+.mega-chute-banner {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  color: #FFF;
+  font-family: 'Open Sans';
+}
+
+.mega-chute-banner img {
+  width: auto;
+}
+
+.mega-chute-banner .area-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mega-chute-banner .area-link img {
+  display: none;
+}
+
+.mega-chute-banner .top {
+  padding: 20px 24px;
+  background: center/cover;
+}
+
+.mega-chute-banner .subtitle {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.mega-chute-banner h2 {
+  margin-bottom: 4px;
+  color: #FFF;
+  font-family: 'Oswald';
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 135%;
+}
+
+.mega-chute-banner .bottom {
+  padding: 12px 24px;
+  background: #1E254A;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* transition: .3s;
+  position: relative;
+  z-index: 1; */;
+}
+
+/* .mega-chute-banner .bottom:hover {
+  background: #12183b;
+} */
+
+.mega-chute-banner .sponsor {
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 145%;
+}
+
+.mega-chute-banner .button a {
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+  color: #F4F7F8;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 135%;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1200px) {
+
+  .mega-chute-banner :is(.top.responsiveness,
+    .sponsor .title.responsiveness) {
+    display: none;
+  }
+
+  .mega-chute-banner .sponsor {
+    color: #FFFFFFB2;
+  };
+}
+
+@media (max-width: 1199px) {
+
+  .mega-chute-banner :is(.top:not(.responsiveness),
+    .sponsor .title:not(.responsiveness),
+    .button span) {
+    display: none;
+  }
+
+  .mega-chute-banner .top {
+    padding: 14px 24px;
+  }
+
+  .mega-chute-banner h2 {
+    font-size: 20px;
+  };
+}
+
+/*  */
+
+.homepage-template .col-xl-8>div.sportsbooks {
+  margin-bottom: 30px !important;
+}
+
+/*  */
+
+p>iframe {
+  height: auto;
+  aspect-ratio: 1.6;
+}
+
+.betting-tip.horizontal.long {
+  border-radius: 8px;
+  border: 1px solid #EEE;
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0 1rem;
+  align-items: center;
+  position: relative;
+
+  .area-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .title {
+    color: #EA7A02;
+    font-family: Oswald;
+    font-size: 12px;
+    line-height: 135%;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+  }
+
+  .tip {
+    color: #333;
+    font-family: Oswald;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 125%;
+  }
+
+  .right {
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    background: #EEE;
+    display: flex;
+    align-items: center;
+    gap: 0 8px;
+    color: #333;
+    font-family: Oswald;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 125%;
+    width: fit-content;
+    border: 1px solid transparent;
+    transition: .3s;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      border-color: #F77B16;
+    }
+  }
+
+  .logo {
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 2px;
+    background: #191B2F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & img {
+      width: 80%;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  .donation-link {
+    position: relative;
+  }
+
+  .donation-link a {
+    height: 40px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0 8px;
+    border-radius: 4px;
+    background: #EA7A02;
+    color: #FFF;
+    font-family: Oswald;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 145%;
+    text-transform: uppercase;
+    width: fit-content;
+
+    &:hover {
+      background: #FF5F00;
+    }
+
+    & img {
+      width: 20px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    & {
+      grid-template-columns: 1fr auto;
+      gap: 12px 1rem;
+      padding: 1rem;
+    }
+
+    .donation-link {
+      grid-column: span 2;
+
+      & a {
+        width: auto;
+        justify-content: center;
+      }
+    }
+  };
+}
+
+/*  */
+
+.mma-player.long-card {
+  border-radius: 8px;
+  border: 1px solid #EEE;
+
+  .top {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0 8px;
+    padding: 0 24px 0 1rem;
+    border-bottom: 1px solid #EEEEEE;
+  }
+
+  .nationality {
+    width: 1rem;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .player {
+    padding-top: 8px;
+
+    & img {
+      width: 104px;
+      height: 64px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .category {
+    padding: 6px 12px;
+    border-radius: 80px;
+    background: #F5F5F5;
+    color: #333;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 100%;
+  }
+
+  .personal-details {
+    display: flex;
+    align-items: center;
+    gap: 0 12px;
+    color: #000;
+    font-family: Oswald;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+
+  .bottom {
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 1rem;
+  }
+
+  .label {
+    color: #A0A0A0;
+    font-family: Oswald;
+    font-size: 12px;
+    line-height: 135%;
+    text-transform: uppercase;
+  }
+
+  .content {
+    color: #333;
+    font-family: Oswald;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 125%;
+  }
+
+  @media (max-width: 991px) {
+    .top {
+      padding: 0;
+      gap: 0;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 4px 0;
+      align-items: stretch;
+    }
+
+    .category {
+      width: fit-content;
+      font-size: 10px;
+      padding: 5px 10px;
+    }
+
+    .nationality {
+      width: 14px;
+    }
+
+    .personal-details,
+    .content {
+      font-size: 14px;
+    }
+
+    .bottom {
+      padding: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+  };
+}
+
+/*  */
+
+.mma-player-history {
+  .introduction {
+    padding-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .title {
+    color: #333;
+    font-family: Oswald;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 145%;
+  }
+
+  .string {
+    color: #A0A0A0;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 135%;
+  }
+
+  .event {
+    padding: 12px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0 12px;
+    align-items: center;
+
+    &:nth-child(odd) {
+      border-radius: 4px;
+      background: #F5F5F5;
+    }
+  }
+
+  .fixture-datetime {
+    color: #A0A0A0;
+    font-family: Oswald;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 135%;
+    display: flex;
+    gap: 0 3px;
+  }
+
+  .result {
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-family: Oswald;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 135%;
+
+    &.victory {
+      background: #2ACE4D;
+    }
+
+    &.defeat {
+      background: #DB4015;
+    }
+
+    &.cancelled {
+      background: #DBB72C;
+    }
+  }
+
+  .details {
+    display: flex;
+    align-items: flex-end;
+    gap: 0 4px;
+  }
+
+  .opponent {
+    color: #333;
+    font-family: Oswald;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .method {
+    color: #444;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  @media (max-width: 991px) {
+
+    .details,
+    .fixture-datetime {
+      display: block;
+    }
+
+    .fixture-datetime {
+      text-align: right;
+    }
+
+    .result {
+      align-self: flex-start;
+    }
+
+    .separator {
+      display: none;
+    }
+  };
+}
+
+/*  */
+
+td.odds a {
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/*  */
+
+.long-cards > .introduction {
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #EEE;
+  background: #FFF;
+  color: #68707A;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 135%;
+  margin-bottom: 24px;
+}
+
+.long-cards > .introduction h4 {
+  color: #444;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 120%;
+  margin-bottom: 0;
+}
+
+.long-cards > .introduction .title {
+  padding-bottom: 0;
+}
+
+.long-cards > .introduction .title div {
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+  justify-content: center;
+}
+
+@media (max-width: 1199px) {
+  .long-cards > .introduction {
+    text-align: left;
+  }
+
+  .long-cards > .introduction .title div {
+    align-items: flex-start;
+  }
+}
